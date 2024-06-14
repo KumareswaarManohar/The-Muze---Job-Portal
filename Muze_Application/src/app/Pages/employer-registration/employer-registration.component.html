@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <h2>Employer Registration</h2>
+    <form (ngSubmit)="onRegister()">
+      <div class="form-group">
+        <label for="companyName">Company Name</label>
+        <input type="text" class="form-control" id="companyName" [(ngModel)]="emp.CompanyName" name="companyName" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" [(ngModel)]="emp.email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" [(ngModel)]="emp.password" name="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Register</button>
+    </form>
+  </div>
+  

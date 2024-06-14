@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg ">
+    <div class="container" >
+      <a class="navbar-brand" href="#">
+        <img src="assets\\The Muze Logo.png" alt="The Muze Logo" class="img-fluid" width="200px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/joblisting">Jobs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/companies">Companies</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" >Services</a>
+          </li> -->
+        </ul>
+        <form class="d-flex">
+          <ng-container *ngIf="!isLogged; else loggedInUser">
+            <button routerLink="/landing" class="btn btn-primary mx-2" type="button">Login</button>
+            <button routerLink="/landingregistration" class="btn btn-success" type="button">Register</button>
+          </ng-container>
+          <ng-template #loggedInUser>
+            <span class="navbar-text me-3 text-muted">{{ userInfo.companyName }}</span>
+            <button (click)="logoff()" class="btn btn-danger" type="button">Logout</button>
+          </ng-template>
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container-fluid" >
+    <router-outlet></router-outlet>
+  </div>
+  

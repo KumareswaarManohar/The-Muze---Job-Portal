@@ -1,0 +1,14 @@
+/* app.component.css */
+.navbar {
+    margin-bottom: 20px;
+  }
+  
+  .round-button {
+    border-radius: 20px;
+  }
+  
+  .navbar-text {
+    display: flex;
+    align-items: center;
+  }
+  

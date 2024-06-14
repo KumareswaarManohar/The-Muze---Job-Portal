@@ -1,0 +1,76 @@
+<div class="container-fluid pt-3">
+    <div class="row">
+        <!-- Sidebar for filters -->
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="text-center"><a routerLink="/jobadding" class="text-decoration-none">Add Job</a></h6>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main job listings -->
+        <div class="col-md-6">
+            <div class="row" *ngFor="let job of det">
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <a href="#" class="text-decoration-none text-dark"> 
+                                <h5 class="card-title">{{ job.jobName }}</h5>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <button class="btn btn-sm btn-danger" (click)="deleteJob(job.jobDetailsId)">Delete</button>
+                                    </div>
+                                    <div class="text-muted">
+                                        <small><i class="fa fa-clock-o" aria-hidden="true"></i> Few Hours Ago</small>  
+                                    </div>
+                                </div>
+                                <div class="row pt-2">
+                                    <div class="col-4">
+                                        <p><i class="fa fa-suitcase" aria-hidden="true"></i> {{ job.experience }}</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p><i class="fa fa-inr" aria-hidden="true"></i> {{ job.package }}</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ job.location }}</p>
+                                    </div>
+                                </div>
+                                <p class="card-text text-muted"><i class="fa fa-file-text-o" aria-hidden="true"></i> {{ job.jobDescription }}</p>
+                            </a>
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+        <!-- Applications -->
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="mb-4">Applications</h6>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Job Name</th>
+                                    <th>Job Seeker</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let application of applications">
+                                    <td>{{ application.jobDetails?.jobName }}</td>
+                                    <td>{{ application.jobSeeker?.fullName }}</td>
+                                    <td>{{ application.jobSeeker?.email }}</td>
+                                    <td>{{ application.applicationDate }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

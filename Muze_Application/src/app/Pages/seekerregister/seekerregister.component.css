@@ -1,0 +1,14 @@
+.form-container {
+    max-width: 600px; /* Adjust the width as needed */
+    background-color: #d4edda; /* Light green background */
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem auto; /* Center the form and add some margin from the top */
+  }
+  .form-title {
+    color: #155724; /* Dark green text */
+  }
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }

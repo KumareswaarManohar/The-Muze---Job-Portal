@@ -1,0 +1,6 @@
+@The_Muze_Reactive_HostAddress = http://localhost:5245
+
+GET {{The_Muze_Reactive_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-body">
+    <form (ngSubmit)="onAddingJob()">
+      <div class="mb-3">
+        <label for="jobName" class="form-label">Job Name</label>
+        <input type="text" class="form-control" id="jobName" name="jobName" [(ngModel)]="addJob.jobName" required>
+      </div>
+      <div class="mb-3">
+        <label for="vacancy" class="form-label">Total Vacancy</label>
+        <input type="number" class="form-control" id="vacancy" name="vacancy" [(ngModel)]="addJob.vacancy" required>
+      </div>
+      <div class="mb-3">
+        <label for="domain" class="form-label">Domain</label>
+        <input type="text" class="form-control" id="domain" name="domain" [(ngModel)]="addJob.domain" required>
+      </div>
+      <div class="mb-3">
+        <label for="experience" class="form-label">Experience</label>
+        <input type="text" class="form-control" id="experience" name="experience" [(ngModel)]="addJob.experience" required>
+      </div>
+      <div class="mb-3">
+        <label for="package" class="form-label">Package</label>
+        <input type="text" class="form-control" id="package" name="package" [(ngModel)]="addJob.package" required>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" class="form-control" id="location" name="location" [(ngModel)]="addJob.location" required>
+      </div>
+      <div class="mb-3">
+        <label for="jobDescription" class="form-label">Job Description</label>
+        <textarea class="form-control" id="jobDescription" name="jobDescription" rows="3" [(ngModel)]="addJob.jobDescription" required></textarea>
+      </div>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="isActive" name="isActive" [(ngModel)]="addJob.isActive">
+        <label class="form-check-label" for="isActive">Active</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

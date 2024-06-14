@@ -1,0 +1,15 @@
+<div class="container mt-4">
+    <h2>Your Applied Jobs</h2>
+    <div *ngFor="let application of applications" class="card my-3">
+      <div class="card-header">
+        <h3>{{ application.jobDetails?.jobName }}</h3>
+      </div>
+      <div class="card-body">
+        <p><strong>Company:</strong> {{ application.jobDetails?.location }}</p>
+        <p><strong>Applied on:</strong> {{ application.applicationDate | date }}</p>
+        <p><strong>Skills:</strong> {{ application.jobSeeker?.skills }}</p>
+        <p><strong>Years of Experience:</strong> {{ application.jobSeeker?.yearsOfExperience }}</p>
+      </div>
+    </div>
+  </div>
+  

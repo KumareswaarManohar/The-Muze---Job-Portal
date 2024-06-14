@@ -1,0 +1,74 @@
+<div class="container-fluid pt-3">
+    <div class="row">
+      <!-- Applied Jobs Section -->
+      <div class="col-md-3 filter">
+        <div class="card">
+          <div class="card-body">
+            <h6 class="text-center">Applied Jobs</h6>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Job Listings Section -->
+      <div class="col-md-6 job">
+        <div class="row" *ngFor="let job of det">
+          <div class="col-12">
+            <div class="card job-card" (click)="selectJob(job)">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-8">
+                    <h6>{{ job.jobName }}</h6>
+                  </div>
+                  <div class="col-4 text-end">
+                    <div class="apply-button">
+                      <div class="btn btn-success" (click)="ApplyMethod()">Apply</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <i class="fa fa-suitcase" aria-hidden="true"></i> {{ job.experience }}
+                  </div>
+                  <div class="col-4">
+                    <i class="fa fa-inr" aria-hidden="true"></i> {{ job.package }}
+                  </div>
+                  <div class="col-4">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> {{ job.location }}
+                  </div>
+                </div>
+                <div class="row pt-1">
+                  <div class="col-12">
+                    <i class="fa fa-file-text-o" aria-hidden="true"></i> <span class="text-muted">{{ job.jobDescription }}</span>
+                  </div>
+                </div>
+                <div class="row pt-1">
+                  <div class="col-6">
+                    <small>Few Hours Ago</small>
+                  </div>
+                  <div class="col-6 text-end">
+                    <i class="fa fa-bookmark" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Selected Job Details Section -->
+      <div class="col-md-3">
+        <div *ngIf="selectedJob" class="card selected-job-card">
+          <div class="card-body">
+            <h5>{{ selectedJob.jobName }}</h5>
+            <p><strong>Domain:</strong> {{ selectedJob.domain }}</p>
+            <p><strong>Experience:</strong> {{ selectedJob.experience }}</p>
+            <p><strong>Package:</strong> {{ selectedJob.package }}</p>
+            <p><strong>Location:</strong> {{ selectedJob.location }}</p>
+            <p><strong>Description:</strong> {{ selectedJob.jobDescription }}</p>
+            <button class="btn btn-success" (click)="ApplyMethod()">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
